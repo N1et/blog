@@ -6,8 +6,8 @@ import React, { Fragment } from "react";
 
 const codeLanguage = "javascript";
 const code = `export default {
-  name: 'Allan Garcez',
-  github: 'g4rcez',
+  name: 'João Medeiros',
+  github: 'N1et',
 }`;
 
 const tabs = [{ name: "blog.config.ts", isActive: true }];
@@ -36,10 +36,8 @@ export function Hero() {
                                 Posts, relatos e experiências do ponto de vista de um desenvolvedor
                             </p>
                             <div className="mt-8 flex gap-4 md:justify-center lg:justify-start">
-                                <Button href="https://github.com/g4rcez">Github</Button>
-                                <Button href="https://www.linkedin.com/in/allan-garcez/">LinkedIn</Button>
-                                <Button href="https://twitter.com/garcez_allan" variant="secondary">
-                                    <del>Twitter</del>X
+                                <Button href="https://github.com/N1et">Github</Button>
+                                <Button href="https://www.linkedin.com/in/joaovfmedeiros/">LinkedIn</Button>
                                 </Button>
                             </div>
                         </div>

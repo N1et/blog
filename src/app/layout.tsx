@@ -11,7 +11,7 @@ const inter = Inter({ subsets: ["latin"], display: "swap", variable: "--font-int
 const lexend = Lexend({ subsets: ["latin"], display: "swap", variable: "--font-lexend" });
 
 export const metadata: Metadata = {
-    title: { template: "%s - Blog do Garcez", default: "Blog do Garcez" },
+    title: { template: "%s - Medeiros's Blog", default: "Blog do Garcez" },
 };
 
 export default function RootLayout(props: PropsWithChildren<{}>) {

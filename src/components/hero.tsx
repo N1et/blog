@@ -5,10 +5,9 @@ import { Highlight } from "prism-react-renderer";
 import React, { Fragment } from "react";
 
 const codeLanguage = "javascript";
-const code = `export default {
-  name: 'João Medeiros',
-  github: 'N1et',
-}`;
+const code = `medeiros@server:~$ cat note.txt
+Hack All The Things
+`;
 
 const tabs = [{ name: "blog.config.ts", isActive: true }];
 
@@ -30,10 +29,10 @@ export function Hero() {
                     <div className="relative z-10 md:text-center lg:text-left">
                         <div className="relative">
                             <p className="inline bg-gradient-to-r from-blue-300 via-blue-400 to-blue-300 bg-clip-text font-display text-4xl tracking-tight text-transparent">
-                                Ideias e códigos através de posts
+                                Hi, my name is João Medeiros
                             </p>
                             <p className="mt-3 text-xl tracking-tight text-slate-400">
-                                Posts, relatos e experiências do ponto de vista de um desenvolvedor
+				Here I make posts about hacking stuffs, CTFs and others topics.
                             </p>
                             <div className="mt-8 flex gap-4 md:justify-center lg:justify-start">
                                 <Button href="https://github.com/N1et">Github</Button>

@@ -8,7 +8,7 @@ language: pt-br
 translations:
   - pt-br
 description: The Active HTB machine is focused in Active Directory.
-date: 2025-03-11T13:07:22
+date: "2025-03-11T13:07:22"
 ---
 
 "Active" is an easy box on HTB focused on Active Directory. The machine allows anonymous access and has an SMB share containing a `Groups.xml` file with a GPP-encrypted password for the user `SVC_TGS`. The user `SVC_TGS` is vulnerable to a Kerberoasting attack, which retrieves the administrator's hash. This hash can be cracked using the `rockyou.txt` wordlist, allowing remote access to compromise the machine.

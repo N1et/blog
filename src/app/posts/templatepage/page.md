@@ -6,7 +6,7 @@ subjects:
 language: pt-br
 translations:
   - pt-br
-date: 2025-01-18T13:07:22.874Z
+date: 2025-03-11T13:07:22
 description: Template de nota
 ---
 `

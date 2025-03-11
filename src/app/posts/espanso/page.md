@@ -1,11 +1,13 @@
 ---
 level: 1
-title: Espanso. Uma nova forma de digitar
-subjects: ["tips-and-tricks"]
-language: "pt-br"
-translations: ["pt-br"]
-date: "2025-01-18T13:07:22.874Z"
-description: "Mudando sua forma de digitar com macros e automações."
+title: Template de Page
+subjects:
+  - tips-and-tricks
+language: pt-br
+translations:
+  - pt-br
+date: 2025-01-18T13:07:22.874Z
+description: Template de nota
 ---
 
 Você já ouviu falar do [espanso](https://espanso.org/)? É uma ferramenta que tenho usado há tempos e que é de grande utilidade para automatizar coisas simples durante sua digitação, como preencher uma data ou um CPF.

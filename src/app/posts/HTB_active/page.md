@@ -104,7 +104,7 @@ As seen above, we were able to crack the administrator's hash and obtained the p
 
 Now, we can execute commands on the machine using the `wmic` service and retrieve the flag.
 
-```powershell
+```shell
 impacket-wmiexec active.htb/Administrator:Ticketmaster1968@10.129.72.230
 ```
 

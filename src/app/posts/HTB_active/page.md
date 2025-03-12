@@ -21,7 +21,7 @@ date: "2025-03-11T13:07:22"
 
 Using the smbmap tool to enumerate all the SMB shares, a read only share named "Replication" was identified.
 
-![](public/active-1.png)
+![](/public/active-1.png)
 
 The "Replication" Share contains a XML file named "Groups.xml". In this file, a GPP encoded password was found.
 
@@ -73,15 +73,15 @@ GPPstillStandingStrong2k18
 
 Now we can authenticate on SVC_TGS account. 
 it was identified that account has read only access to the users directory. 
-![](public/active-2.png)
+![](/public/active-2.png)
 
-![](public/active-3.png)
+![](/public/active-3.png)
 
 The flag was found in the SVC_TGS directory in users share.
 ## To root.txt
 ### Kerberoasting attack
 Using the SVC_TGS account was possible to perform a Kerberoasting attack and retrieves the administrator's hash password.
-![](public/active-4.png)
+![](/public/active-4.png)
 
 ### Cracking the Password with hashcat
 After obtaining the administrator's hash, we can perform a brute-force attack. In this case, we'll use the `hashcat` tool.
@@ -108,4 +108,4 @@ Now, we can execute commands on the machine using the `wmic` service and retriev
 impacket-wmiexec active.htb/Administrator:Ticketmaster1968@10.129.72.230
 ```
 
-![](public/active-5.png)
+![](/public/active-5.png)

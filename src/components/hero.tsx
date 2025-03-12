@@ -9,7 +9,7 @@ const code = `medeiros@server:~$ cat note.txt
 Hack All The Things
 `;
 
-const tabs = [{ name: "blog.config.ts", isActive: true }];
+const tabs = [{ name: "bash", isActive: true }];
 
 function TrafficLightsIcon(props: React.ComponentPropsWithoutRef<"svg">) {
     return (

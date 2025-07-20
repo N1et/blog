@@ -5,6 +5,8 @@ declare module '@/markdoc/search.mjs' {
     url: string
     title: string
     pageTitle?: string
+    subjects?: string
+    date?: string
   }
 
   export function search(query: string, options?: SearchOptions): Array<Result>

@@ -50,33 +50,49 @@ export default function withSearch(nextConfig = {}) {
                         this.addContextDependency(pagesDir);
 
                         let files = glob.sync("**/page.md", { cwd: pagesDir });
-                        let data = files.map((file) => {
-                            let url = file === "page.md" ? "/" : `/${file.replace(/\/page\.md$/, "")}`;
-                            let md = fs.readFileSync(path.join(pagesDir, file), "utf8");
+                        let data = files
+                            .map((file) => {
+                                let url = file === "page.md" ? "/" : `/${file.replace(/\/page\.md$/, "")}`;
+                                let md = fs.readFileSync(path.join(pagesDir, file), "utf8");
 
-                            let sections;
+                                // Skip non-post files (only process files in posts directory)
+                                if (!file.includes('posts/')) {
+                                    return null;
+                                }
 
-                            if (cache.get(file)?.[0] === md) {
-                                sections = cache.get(file)[1];
-                            } else {
                                 let ast = Markdoc.parse(md);
-                                let title = ast.attributes?.frontmatter?.match(/^title:\s*(.*?)\s*$/m)?.[1];
-                                sections = [[title, null, []]];
-                                extractSections(ast, sections);
-                                cache.set(file, [md, sections]);
-                            }
+                                let frontmatter = ast.attributes?.frontmatter || '';
+                                
+                                // Extract frontmatter data
+                                let title = frontmatter.match(/^title:\s*(.*?)\s*$/m)?.[1] || '';
+                                let description = frontmatter.match(/^description:\s*(.*?)\s*$/m)?.[1] || '';
+                                let subjects = frontmatter.match(/^subjects:\s*\[(.*?)\]\s*$/m)?.[1]
+                                    ?.split(',')
+                                    ?.map(s => s.trim().replace(/['"]/g, '')) || [];
+                                let date = frontmatter.match(/^date:\s*(.*?)\s*$/m)?.[1] || '';
 
-                            return { url, sections };
-                        });
+                                // Get content without frontmatter for search
+                                let content = toString(ast);
+
+                                return { 
+                                    url, 
+                                    title, 
+                                    description, 
+                                    subjects, 
+                                    date, 
+                                    content: [title, description, ...subjects, content].join(' ')
+                                };
+                            })
+                            .filter(Boolean); // Remove null entries
                         return `
               import FlexSearch from 'flexsearch'
 
-              let sectionIndex = new FlexSearch.Document({
+              let postIndex = new FlexSearch.Document({
                 tokenize: 'full',
                 document: {
                   id: 'url',
-                  index: 'content',
-                  store: ['title', 'pageTitle'],
+                  index: ['title', 'description', 'subjects', 'content'],
+                  store: ['title', 'description', 'subjects', 'date'],
                 },
                 context: {
                   resolution: 9,
@@ -87,19 +103,19 @@ export default function withSearch(nextConfig = {}) {
 
               let data = ${JSON.stringify(data)}
 
-              for (let { url, sections } of data) {
-                for (let [title, hash, content] of sections) {
-                  sectionIndex.add({
-                    url: url + (hash ? ('#' + hash) : ''),
-                    title,
-                    content: [title, ...content].join('\\n'),
-                    pageTitle: hash ? sections[0][0] : undefined,
-                  })
-                }
+              for (let post of data) {
+                postIndex.add({
+                  url: post.url,
+                  title: post.title,
+                  description: post.description,
+                  subjects: post.subjects.join(' '),
+                  content: post.content,
+                  date: post.date
+                })
               }
 
               export function search(query, options = {}) {
-                let result = sectionIndex.search(query, {
+                let result = postIndex.search(query, {
                   ...options,
                   enrich: true,
                 })
@@ -109,7 +125,9 @@ export default function withSearch(nextConfig = {}) {
                 return result[0].result.map((item) => ({
                   url: item.id,
                   title: item.doc.title,
-                  pageTitle: item.doc.pageTitle,
+                  pageTitle: item.doc.description, // Use description as subtitle
+                  subjects: item.doc.subjects,
+                  date: item.doc.date
                 }))
               }`;
                     }),

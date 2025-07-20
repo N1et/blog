@@ -1,6 +1,6 @@
 import { BlogConfig } from "@/blog.config";
 
 export const navigation = [
-    { title: "Tópicos", links: BlogConfig.topics },
-    { title: "Projetos", links: BlogConfig.projects },
+    { title: "Topics", links: BlogConfig.topics },
+    { title: "Projects", links: BlogConfig.projects },
 ];

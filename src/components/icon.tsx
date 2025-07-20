@@ -17,7 +17,7 @@ const icons = {
 };
 
 const iconStyles = {
-    blue: "[--icon-foreground:theme(colors.slate.900)] [--icon-background:theme(colors.white)]",
+    blue: "[--icon-foreground:theme(colors.slate.100)] [--icon-background:theme(colors.whitse)]",
     amber: "[--icon-foreground:theme(colors.amber.900)] [--icon-background:theme(colors.amber.100)]",
 };
 

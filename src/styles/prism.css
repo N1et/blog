@@ -1,5 +1,9 @@
 pre[class*='language-'] {
     color: theme('colors.slate.50');
+    white-space: pre-wrap !important;
+    word-break: break-all !important;
+    overflow-wrap: anywhere !important;
+    overflow-x: hidden !important;
 }
 
 .token.tag,
@@ -629,4 +633,19 @@ pre .logger.log-log {
 pre .logger.log-log svg {
     margin-left: 6px;
     margin-right: 9px;
+}
+
+/* Quebra de linha forçada em todos os blocos de código */
+pre, code, pre[class*='language-'], code[class*='language-'] {
+    white-space: pre-wrap !important;
+    word-break: break-all !important;
+    overflow-wrap: anywhere !important;
+    overflow-x: hidden !important;
+}
+
+.shiki, .shiki pre, .shiki code, .shiki span {
+    white-space: pre-wrap !important;
+    word-break: break-all !important;
+    overflow-wrap: anywhere !important;
+    overflow-x: hidden !important;
 }

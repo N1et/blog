@@ -6,12 +6,22 @@ import { Highlight } from "prism-react-renderer";
 import React, { Fragment } from "react";
 
 const codeLanguage = "javascript";
-const code = `export default {
-  name: '${BlogConfig.user.name}',
-  github: '${BlogConfig.author}',
-}`;
+// const code = `➜ unzip ./medeiros.zip
+// Archive:  medeiros.zip
+//   inflating: README.md       
+//   inflating: rockyou.txt    
+//   inflating: exploits/
+//   ...       `;
 
-const tabs = [{ name: "blog.config.ts", isActive: true }];
+const code = `Wake Up, Neo...`;
+  
+
+// const code = `msf6 exploit(windows/smb/ms17_010_eternalblue) > run
+// [*] Started reverse TCP handler on 192.168.1.100:4444
+// [*] Sending stage (200262 bytes) to 192.168.1.105
+// [*] Meterpreter session 1 opened `;
+
+const tabs = [{ name: "powershell", isActive: true }];
 
 function TrafficLightsIcon(props: React.ComponentPropsWithoutRef<"svg">) {
     return (
@@ -31,17 +41,16 @@ export function Hero() {
                     <div className="relative z-10 md:text-center lg:text-left">
                         <div className="relative">
                             <p className="inline text-4xl tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-glow-left via-glow-middle to-glow-right font-display">
-                                Ideias e códigos através de posts
+                                Medeiros.zip
                             </p>
                             <p className="mt-3 text-xl tracking-tight text-typography">
-                                Posts, relatos e experiências do ponto de vista de um desenvolvedor
+                                Hacking stuffs, CTFs, and posts about my journey in the world of cybersecurity.
                             </p>
                             <div className="flex gap-4 mt-8 md:justify-center lg:justify-start">
-                                <Button href="https://github.com/g4rcez">Github</Button>
-                                <Button href="https://www.linkedin.com/in/allan-garcez/">LinkedIn</Button>
-                                <Button href="https://twitter.com/garcez_allan" variant="secondary">
-                                    <del>Twitter</del>X
-                                </Button>
+                                <Button href="https://github.com/N1et">Github</Button>
+                                <Button href="https://www.linkedin.com/in/joaovfmedeiros/">LinkedIn</Button>
+                                <Button href="https://app.hackthebox.com/users/19245">HackTheBox</Button>
+
                             </div>
                         </div>
                     </div>
@@ -84,12 +93,7 @@ export function Hero() {
                                             aria-hidden="true"
                                             className="pr-4 font-mono border-r select-none border-slate-300/5 text-slate-600"
                                         >
-                                            {Array.from({ length: code.split("\n").length }).map((_, index) => (
-                                                <Fragment key={index}>
-                                                    {(index + 1).toString().padStart(2, "0")}
-                                                    <br />
-                                                </Fragment>
-                                            ))}
+                                           
                                         </div>
                                         <Highlight
                                             code={code}
@@ -98,8 +102,14 @@ export function Hero() {
                                         >
                                             {({ className, style, tokens, getLineProps, getTokenProps }) => (
                                                 <pre
-                                                    className={clsx(className, "flex overflow-x-auto pb-6")}
-                                                    style={style}
+                                                    className={clsx(className, "flex pb-6 overflow-hidden")}
+                                                    style={{
+                                                        ...style,
+                                                        whiteSpace: 'pre-wrap',
+                                                        wordBreak: 'break-all',
+                                                        overflowWrap: 'anywhere',
+                                                        overflowX: 'hidden'
+                                                    }}
                                                 >
                                                     <code className="px-4">
                                                         {tokens.map((line, lineIndex) => (

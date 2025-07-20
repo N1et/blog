@@ -25,27 +25,27 @@ export default {
             colors: {
                 typography: "#aeaeae",
                 primary: {
-                    darkest: "oklch(12.9% 0.042 264.695)",
-                    darker: "oklch(13% 0.028 261.692)",
+                    darkest: "#5a8662",
+                    darker: "#101010",
                     DEFAULT: "#1e3a8a",
-                    btn: "oklch(50% 0.134 242.749)",
-                    "btn-hover": "oklch(39.1% 0.09 240.876)",
+                    btn: "#5a8662",
+                    "btn-hover": "#b6c89f",
                     "btn-text": "#ffffff",
                 },
                 secondary: {
-                    darker: "oklch(20.8% 0.042 265.755)",
-                    DEFAULT: "oklch(21% 0.034 264.665)",
-                    btn: "oklch(21% 0.034 264.665)",
-                    "btn-hover": "oklch(21% 0.034 264.665)",
+                    darker: "#5a8662",
+                    DEFAULT: "#5a8662",
+                    btn: "#5a8662",
+                    "btn-hover": "#b6c89f",
                     "btn-text": "#ffffff",
                 },
                 glow: {
-                    left: "#93c5fd",
-                    middle: "#93c5fd",
-                    right: "#60a5fa",
-                    divider: "oklch(27.9% 0.041 260.031)",
+                    left: "#5a8662",
+                    middle: "#5a8662",
+                    right: "#5a8662",
+                    divider: "#5a8662",
                     light: "#ffffff",
-                    glass: "#121212"
+                    glass: "black"
                 }
             },
             fontFamily: {

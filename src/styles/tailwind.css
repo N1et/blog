@@ -7,6 +7,30 @@
     [inert] ::-webkit-scrollbar {
         display: none;
     }
+    
+    /* Quebra de linha automática em blocos de código */
+    pre, pre code {
+        white-space: pre-wrap !important;
+        word-break: break-all !important;
+        overflow-wrap: anywhere !important;
+        overflow-x: hidden !important;
+    }
+    
+    /* Para elementos prose */
+    .prose pre, .prose pre code {
+        white-space: pre-wrap !important;
+        word-break: break-all !important;
+        overflow-wrap: anywhere !important;
+        overflow-x: hidden !important;
+    }
+    
+    /* Para shiki */
+    .shiki, .shiki pre, .shiki code {
+        white-space: pre-wrap !important;
+        word-break: break-all !important;
+        overflow-wrap: anywhere !important;
+        overflow-x: hidden !important;
+    }
 }
 
 .markdown-img {

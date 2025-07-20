@@ -1,28 +1,22 @@
 export const BlogConfig = {
     user: {
-        name: "Allan Garcez"
+        name: "Medeiros"
     },
-    author: "g4rcez",
-    name: "Blog do Garcez",
-    domain: "garcez.dev",
-    site: "https://garcez.dev",
-    github: "https://github.com/g4rcez",
-    twitter: "https://x.com/garcez_allan",
+    author: "Medeiros",
+    name: "medeiros.zip",
+    domain: "medeiros.zip",
+    site: "https://medeiros.zip",
+    github: "https://github.com/N1et",
+    twitter: "",
     projects: [
-        { title: "Brouther", href: "https://brouther.vercel.app/" },
-        { title: "Racha aí", href: "https://racha.ai" },
-        { title: "useReducer", href: "https://github.com/g4rcez/use-reducer" },
+        {title: "HackHere", href: "https://github.com/N1et/hackhere"},
+        {title: "ObsidianOSCP", href: "https://github.com/N1et/Obsidian4OSCP"},
+        {title: "LKM Rootkit", href: "https://github.com/N1et/lkm_rootkit"}
+
     ],
     topics: [
-        { title: "Frontend", href: "/?q=frontend" },
-        { title: "Javascript", href: "/?q=javascript" },
-        { title: "NodeJS", href: "/?q=nodejs" },
-        { title: "React", href: "/?q=react" },
-        { title: "Tips and Tricks", href: "/?q=tips-and-tricks" },
-        { title: "Typescript", href: "/?q=typescript" },
+        { title: "CTF", href: "/?q=CTF" }
     ],
     terminal: [
-        { title: "g4rcez/brouther", description: "roteamento fortemente tipado em React" },
-        { title: "g4rcez/use-reducer", description: "reimplementação do useReducer com tipagem" },
     ]
 };

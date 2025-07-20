@@ -6,8 +6,16 @@ export const Fence = async (props: PropsWithChildren<{ language: string }>) => {
     if (!code) return null;
     const html = await highlight(code, props.language);
     return (
-        <div className="prose-pre:overflow-x-clip hover:prose-pre:overflow-x-auto">
-            <div dangerouslySetInnerHTML={{ __html: html }} />
+        <div className="overflow-hidden">
+            <div 
+                dangerouslySetInnerHTML={{ __html: html }} 
+                style={{
+                    whiteSpace: 'pre-wrap',
+                    wordBreak: 'break-all',
+                    overflowWrap: 'anywhere',
+                    overflowX: 'hidden'
+                }}
+            />
         </div>
     );
 };

@@ -111,10 +111,12 @@ const SearchResult = ({
     query: string;
 }) => {
     const id = useId();
-    const sectionTitle = navigation.find((section) =>
-        section.links.find((link) => link.href === result.url.split("#")[0]),
-    )?.title;
-    const hierarchy = [sectionTitle, result.pageTitle].filter((x): x is string => typeof x === "string");
+    // For posts, show "Posts" as section and description as subtitle
+    const isPost = result.url.includes('/posts/');
+    const hierarchy = isPost 
+        ? ['Posts', result.pageTitle].filter((x): x is string => typeof x === "string")
+        : [result.pageTitle].filter((x): x is string => typeof x === "string");
+    
     return (
         <li
             className="group block cursor-default rounded-lg px-3 py-2 aria-selected:bg-slate-100 dark:aria-selected:bg-slate-700/30"
@@ -287,7 +289,7 @@ function SearchDialog({
                 <CloseOnAutoCompleteNavigation close={close} autocomplete={autocomplete} />
             </Suspense>
             <Dialog open={open} onClose={() => close(autocomplete)} className={clsx("fixed inset-0 z-50", className)}>
-                <div className="fixed inset-0 bg-slate-900/50 backdrop-blur" />
+                <div className="fixed inset-0 backdrop-blur" />
 
                 <div className="fixed inset-0 overflow-y-auto px-4 py-4 sm:px-6 sm:py-20 md:py-32 lg:px-8 lg:py-[15vh]">
                     <DialogPanel className="mx-auto transform-gpu overflow-hidden rounded-xl bg-white shadow-xl sm:max-w-xl dark:bg-slate-800 dark:ring-1 dark:ring-slate-700">
@@ -366,7 +368,7 @@ export function Search() {
             >
                 <SearchIcon className="h-5 w-5 flex-none fill-slate-400 group-hover:fill-slate-500 md:group-hover:fill-slate-400 dark:fill-slate-500" />
                 <span className="sr-only md:not-sr-only md:ml-2 md:text-slate-500 md:dark:text-slate-400">
-                    Encontre qualquer coisa...
+                    Search...
                 </span>
                 {modifierKey && (
                     <kbd className="ml-auto hidden font-medium text-slate-400 md:block dark:text-slate-500">

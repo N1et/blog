@@ -1,7 +1,7 @@
 ---
 level: 0
 subjects:
-  - CTF
+  - Certification
 title: My OSCP experience
 language: pt-br
 translations:

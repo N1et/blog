@@ -15,7 +15,8 @@ export const BlogConfig = {
 
     ],
     topics: [
-        { title: "CTF", href: "/?q=CTF" }
+        { title: "CTF", href: "/?q=CTF" },
+        { title: "Certification", href: "/?q=certification" }
     ],
     terminal: [
     ]

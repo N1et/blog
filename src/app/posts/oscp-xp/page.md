@@ -1,19 +1,21 @@
 ---
 level: 0
-subjects: ["CTF"]
-title: "My OSCP experience"
-language: "pt-br"
-translations: ["pt-br"]
-date: "2019-08-05T00:00:00.000Z"
-description: "My journey to get the OSCP certification."
-imageNameKey : "array"
+subjects:
+  - CTF
+title: My OSCP experience
+language: pt-br
+translations:
+  - pt-br
+date: "2025-09-03"
+description: My journey to get the OSCP certification.
+imageNameKey: array
 ---
 
 Hi guys, i don't if can help anyone but i will a bit of my experience to get the OSCP certification. 
 
 Since English isn’t my first language, I wrote some of this on my own and asked ChatGPT to help me polish a few parts.
 
-## Introduction
+# Introduction
 
 One random day I woke up, checked my emails, and saw one with the subject: **“Offensive Security.”**
 
@@ -21,7 +23,7 @@ My company had bought the OSCP voucher with 90 days of labs. Nobody at the compa
 
 My goal was to pass on the first attempt, since the company paid for the certification, and a retake would be quite expensive — especially in Brazil.
 
-## Understading and Planning
+# Understading and Planning
 
 In the first moment i read a lot of posts about OSCP experiences on internet to understand how the people built their plan to pass in the first attempt.
 
@@ -33,7 +35,7 @@ Reading theses posts i got some important things that i had to do:
 3. Create a methodology.
 4. Focus in my weakness until it becomes my strongest skill (AD and Privesc Windows). 
 
-## Note Take - Obsidian
+# Note Take - Obsidian
 To note things and build a structure i used Obsidian, it's my favorite editor ever, so thats was easy. 
 
 The structure that i created is very simple, concept notes and practice notes. The concept notes just explain a concept and the practice note hold some informations like commands and code. 
@@ -70,7 +72,7 @@ Please, write a documentation (writeup) of all boxes you complete, this help you
 
 Last tip: read writeups!!! it's really useful to understand and learn new techniques. 
 
-## Quick Commands and scripts - SnippetLab
+# Quick Commands and scripts - SnippetLab
 When I was learning Active Directory, I realized that I needed to remember and save a lot of quick commands, syntax, scripts, and so on, so I started using this tool called SnippetLab. 
 
 SnippetLab is a software where you can store quick commands, scripts, code, and more, and organize them with tags, directories, and other options. Actually, I could use Obsidian for this, but for this purpose I think SnippetLab easier to use it. 
@@ -91,7 +93,7 @@ This imagem below is a example of use raycast to access to copy commands from sn
 ![](/public/My%20Experience%20in%20OSCP_4.png)
 
 
-## Methodology 
+# Methodology 
 
 I use **Obsidian** not only for general note-taking, but also as a structured system to build and follow my own pentesting methodology. Inside a dedicated vault, I created **ready-to-use templates** that act like smart checklists, helping me keep consistency across engagements.
 
@@ -112,6 +114,12 @@ Image Example:
 Obsidian played a key role in helping me create my own methodology for the **OSCP**. I built structured templates and checklists inside a dedicated vault, which allowed me to track progress, stay consistent, and avoid missing important steps during my practice.
 
 The idea actually came from my **real-life pentest experience**, where I was already using Obsidian to organize findings, credentials, and privilege escalation paths. Adapting this workflow to OSCP preparation made the process much more efficient and reliable.
+
+# Reporting
+
+To report i used sysreptor.com, it's a software that you can run locally to generate reports from markdown to PDF, it's very simple to use.
+
+https://docs.sysreptor.com/
 
 # First atttempt - 60/100
 

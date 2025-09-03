@@ -15,12 +15,7 @@ const Terminal = () => {
     const commands = useMemo(() => {
         const bin = [
             { name: "clear", exec: () => (setHistory([]), []), description: "Limpar tela" },
-            { name: "whoami", exec: () => [BlogConfig.author], description: "Nome do usuário" },
-            {
-                name: "ls",
-                exec: () => BlogConfig.terminal.map((x) => `${x.title}: ${x.description}`),
-                description: "Listar diretório",
-            },
+            { name: "whoami", exec: () => [BlogConfig.author], description: "Nome do usuário" }
         ];
         const map = bin.reduce<Commands>(
             (acc, el) => ({

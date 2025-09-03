@@ -56,7 +56,7 @@ This is a example of my obsidian Graph Views to understand it.
 ![](/public/My%20Experience%20in%20OSCP.png)
 
 
-## List of OSCP-like Machines
+# List of OSCP-like Machines
 
 It's not secret, i follow the list of TJNull PWK v3 to OSCP-like machines. \
 https://docs.google.com/spreadsheets/d/1dwSMIAPIam0PuRBkCiDI88pU3yzrqqHkDtBngUHNCw8/edit?pli=1&gid=129517485#gid=129517485

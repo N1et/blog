@@ -14,13 +14,21 @@ const Img = {
         alt: { type: String },
         caption: { type: String },
     },
-    render: ({ src = "", caption = "", alt = "" }) => (
-        <span className="markdown-img">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={src.replace(/^\/public/g, "")} alt={alt} />
-            <small>{caption || alt}</small>
-        </span>
-    ),
+    render: ({ src = "", caption = "", alt = "" }) => {
+        const cleaned = "/" + src.replace(/^\/?public\//, "").replace(/^\//, "");
+        const isVideo = /\.(mp4|webm|ogg|mov)$/i.test(cleaned);
+        return (
+            <span className="markdown-img">
+                {isVideo ? (
+                    <video src={cleaned} controls playsInline />
+                ) : (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img src={cleaned} alt={alt} />
+                )}
+                <small>{caption || alt}</small>
+            </span>
+        );
+    },
 };
 
 const nodes = {
